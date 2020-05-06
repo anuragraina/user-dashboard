@@ -1,12 +1,19 @@
 import React from 'react';
 import './App.css';
-import { Layout, Avatar, Menu } from 'antd';
+import Settings from './components/Settings';
+import Notifications from './components/Notifications';
+import Tasks from './components/Tasks';
+import SideMenu from './components/SideMenu';
+import { Layout, Avatar, Breadcrumb } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
 const { Header, Footer, Sider, Content } = Layout;
-const { SubMenu } = Menu;
 
 function App() {
+	function Component(content) {
+		console.log(content);
+	}
+
 	return (
 		<div className="App">
 			<Layout>
@@ -15,23 +22,19 @@ function App() {
 				</Header>
 				<Layout>
 					<Sider>
-						<Menu theme="dark" mode="inline">
-							<SubMenu
-								key="sub2"
-								title={
-									<span>
-										<span>Profile</span>
-									</span>
-								}
-							>
-								<Menu.Item key="1">Settings</Menu.Item>
-								<Menu.Item key="2">Notifications</Menu.Item>
-							</SubMenu>
-						</Menu>
+						<SideMenu clickedItem={Component} />
 					</Sider>
 					<Layout>
-						<Content>Content</Content>
-						<Footer>Footer</Footer>
+						<Content style={{ margin: '0 16px' }}>
+							<Breadcrumb style={{ margin: '16px 0' }}>
+								<Breadcrumb.Item>User</Breadcrumb.Item>
+								<Breadcrumb.Item>Bill</Breadcrumb.Item>
+							</Breadcrumb>
+							<div style={{ background: '#fff', padding: 24, minHeight: 500, float: 'center' }}>
+								<Settings />
+							</div>
+						</Content>
+						<Footer />
 					</Layout>
 				</Layout>
 			</Layout>

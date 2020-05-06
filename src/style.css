@@ -1,0 +1,9 @@
+.notifyRow {
+	border: 1px solid;
+	padding: 10px;
+}
+
+#submitBtn {
+	background-color: #0fda34;
+	color: white;
+}
