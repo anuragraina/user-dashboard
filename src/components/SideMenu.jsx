@@ -12,8 +12,8 @@ import {
 const { SubMenu } = Menu;
 
 function SideMenu(props) {
-	function handleClick() {
-		console.log('clicked');
+	function handleClick(content) {
+		props.clicked(content);
 	}
 
 	return (
@@ -22,18 +22,22 @@ function SideMenu(props) {
 				Dashboard
 			</Menu.Item>
 			<SubMenu key="Profile" icon={<ProfileOutlined />} title="Profile">
-				<Menu.Item onClick={handleClick} key="Settings" icon={<SettingOutlined />}>
+				<Menu.Item onClick={() => handleClick('Settings')} key="Settings" icon={<SettingOutlined />}>
 					Settings
 				</Menu.Item>
-				<Menu.Item key="Notifications" icon={<NotificationOutlined />}>
+				<Menu.Item
+					onClick={() => handleClick('Notifications')}
+					key="Notifications"
+					icon={<NotificationOutlined />}
+				>
 					Notifications
 				</Menu.Item>
 			</SubMenu>
 			<SubMenu key="Mytasks" icon={<SnippetsOutlined />} title="My Tasks">
-				<Menu.Item key="Task1" icon={<FormOutlined />}>
+				<Menu.Item onClick={() => handleClick('Task1')} key="Task1" icon={<FormOutlined />}>
 					Task 1
 				</Menu.Item>
-				<Menu.Item key="Task2" icon={<FormOutlined />}>
+				<Menu.Item onClick={() => handleClick('Task2')} key="Task2" icon={<FormOutlined />}>
 					Task 2
 				</Menu.Item>
 			</SubMenu>

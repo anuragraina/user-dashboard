@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Input, Button, Row, Col, DatePicker } from 'antd';
+import { Form, Button, Row, Col, DatePicker } from 'antd';
+import FormInput from './FormInput';
 
 function Settings() {
 	const layout = {
@@ -14,68 +15,37 @@ function Settings() {
 		<Row justify="center">
 			<Col span={12}>
 				<Row justify="center" className="notifyRow">
-					<Form {...layout}>
-						<Form.Item
-							label="Name"
-							name="name"
-							rules={[
-								{
-									required : true,
-									message  : 'Please input your username!'
-								}
-							]}
-						>
-							<Input />
-						</Form.Item>
+					<Col span={12}>
+						<Form {...layout}>
+							<FormInput type="Name" />
 
-						<Form.Item
-							span={16}
-							label="Date of Birth"
-							rules={[
-								{
-									required : true,
-									message  : 'Please input your username!'
-								}
-							]}
-						>
-							<DatePicker />
-						</Form.Item>
+							<Form.Item
+								label="Date of Birth"
+								name="dob"
+								rules={[
+									{
+										required : true,
+										message  : 'Please input your Date of Birth!'
+									}
+								]}
+							>
+								<DatePicker />
+							</Form.Item>
 
-						<Form.Item
-							label="Profession"
-							name="profession"
-							rules={[
-								{
-									required : true,
-									message  : 'Please input your username!'
-								}
-							]}
-						>
-							<Input />
-						</Form.Item>
+							<FormInput type="Profession" />
 
-						<Form.Item
-							label="Designation"
-							name="designation"
-							rules={[
-								{
-									required : true,
-									message  : 'Please input your username!'
-								}
-							]}
-						>
-							<Input />
-						</Form.Item>
+							<FormInput type="Designation" />
 
-						<Form.Item {...tailLayout}>
-							<Button type="danger" htmlType="button" style={{ margin: 2 }}>
-								Cancel
-							</Button>
-							<Button id="submitBtn" htmlType="submit" style={{ margin: 2 }}>
-								Submit
-							</Button>
-						</Form.Item>
-					</Form>
+							<Form.Item {...tailLayout}>
+								<Button type="danger" htmlType="button" style={{ margin: 2 }}>
+									Cancel
+								</Button>
+								<Button id="submitBtn" htmlType="submit" style={{ margin: 2 }}>
+									Submit
+								</Button>
+							</Form.Item>
+						</Form>
+					</Col>
 				</Row>
 			</Col>
 		</Row>

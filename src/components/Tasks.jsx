@@ -30,7 +30,7 @@ function Tasks() {
 							</Form.Item>
 
 							<Form.Item name="inputSQL" label="Provide SQL">
-								<Input.TextArea placeholder="Provide SQL in here.z" />
+								<Input.TextArea placeholder="Provide SQL in here." />
 							</Form.Item>
 
 							<Form.Item label="Target List">
