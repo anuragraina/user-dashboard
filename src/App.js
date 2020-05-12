@@ -41,10 +41,13 @@ function App() {
 				setBreadcrumb2('Task 2');
 				break;
 
-			default:
+			case 'Dashboard':
 				setComponent(Dashboard);
 				setBreadcrumb1('');
 				setBreadcrumb2('Dashboard');
+				break;
+
+			default:
 				break;
 		}
 	}

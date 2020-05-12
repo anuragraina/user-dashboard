@@ -1,7 +1,6 @@
 import React from 'react';
 import { Form, Button, Row, Col } from 'antd';
 import FormSwitch from './FormSwitch';
-import '../style.css';
 
 function Notifications() {
 	const layout = {

@@ -18,7 +18,7 @@ function SideMenu(props) {
 
 	return (
 		<Menu defaultSelectedKeys={[ 'Dashboard' ]} theme="dark" mode="inline">
-			<Menu.Item key="Dashboard" icon={<DashboardOutlined />}>
+			<Menu.Item onClick={() => handleClick('Dashboard')} key="Dashboard" icon={<DashboardOutlined />}>
 				Dashboard
 			</Menu.Item>
 			<SubMenu key="Profile" icon={<ProfileOutlined />} title="Profile">
